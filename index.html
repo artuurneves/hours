@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css" >
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <title>Horas</title>
+    <script>
+
+        function somaHora() {
+            var horaIni= document.getElementById('hrin').value.split(':');
+
+            var horaSom= "09:11".split(':');;
+
+	        horasTotal = parseInt(horaIni[0], 10) + parseInt(horaSom[0], 10);
+
+	        minutosTotal = parseInt(horaIni[1], 10) + parseInt(horaSom[1], 10);
+
+            if(minutosTotal >= 60){
+                minutosTotal -= 60; horasTotal += 1;
+            }
+
+            if (horasTotal >= 24) {
+                horasTotal = horasTotal - 24;
+            }
+
+
+            document.getElementById('result').value = completaZeroEsquerda(horasTotal) + ":" + completaZeroEsquerda(minutosTotal);
+
+        }
+
+        function somaMeia() {
+
+            somaHora();
+
+            var horaFim = document.getElementById('result').value.split(':');
+            var bancoSum = "00:31".split(':');
+
+            horasTotal = parseInt(horaFim[0], 10) + parseInt(bancoSum[0], 10);
+
+	        minutosTotal = parseInt(horaFim[1], 10) + parseInt(bancoSum[1], 10);
+
+            if(minutosTotal >= 60){
+                minutosTotal -= 60; horasTotal += 1;
+            }
+
+            if (horasTotal >= 24) {
+                horasTotal = horasTotal - 24;
+            }
+
+            document.getElementById('result').value = completaZeroEsquerda(horasTotal) + ":" + completaZeroEsquerda(minutosTotal);
+
+        }
+
+        function somaUma() {
+
+            somaHora();
+
+            var horaFim = document.getElementById('result').value.split(':');
+            var bancoSum = "01:00".split(':');
+
+            horasTotal = parseInt(horaFim[0], 10) + parseInt(bancoSum[0], 10);
+
+	        minutosTotal = parseInt(horaFim[1], 10) + parseInt(bancoSum[1], 10);
+
+            if(minutosTotal >= 60){
+                minutosTotal -= 60; horasTotal += 1;
+            }
+
+            if (horasTotal >= 24) {
+                horasTotal = horasTotal - 24;
+            }
+
+            document.getElementById('result').value = completaZeroEsquerda(horasTotal) + ":" + completaZeroEsquerda(minutosTotal);
+
+        }
+
+        function somaUmaMeia() {
+
+            somaHora();
+
+            var horaFim = document.getElementById('result').value.split(':');
+            var bancoSum = "01:30".split(':');
+
+            horasTotal = parseInt(horaFim[0], 10) + parseInt(bancoSum[0], 10);
+
+	        minutosTotal = parseInt(horaFim[1], 10) + parseInt(bancoSum[1], 10);
+
+            if(minutosTotal >= 60){
+                minutosTotal -= 60; horasTotal += 1;
+            }
+
+            if (horasTotal >= 24) {
+                horasTotal = horasTotal - 24;
+            }
+
+            document.getElementById('result').value = completaZeroEsquerda(horasTotal) + ":" + completaZeroEsquerda(minutosTotal);
+
+        }
+
+        function somaDuas() {
+
+            somaHora();
+
+            var horaFim = document.getElementById('result').value.split(':');
+            var bancoSum = "02:00".split(':');
+
+            horasTotal = parseInt(horaFim[0], 10) + parseInt(bancoSum[0], 10);
+
+	        minutosTotal = parseInt(horaFim[1], 10) + parseInt(bancoSum[1], 10);
+
+            if(minutosTotal >= 60){
+                minutosTotal -= 60; horasTotal += 1;
+            }
+
+            if (horasTotal >= 24) {
+                horasTotal = horasTotal - 24;
+            }
+
+            document.getElementById('result').value = completaZeroEsquerda(horasTotal) + ":" + completaZeroEsquerda(minutosTotal);
+
+        }
+
+        function completaZeroEsquerda( numero ){
+
+	        return ( numero < 10 ? "0" + numero : numero);
+        }
+    </script>
+    <style>
+
+        body {
+            border: 1px solid #f1f1f1;
+            margin: auto;
+            width: 800px;
+            height: 600px;
+            background-color: darkgrey;
+        }
+
+        header {
+                width:100%;
+                height:10%;
+                background-color: #f1f1f1;
+            }
+
+        nav {
+            background-color: 989;
+            width: 100%;
+
+        }
+
+        footer {
+            clear:both;
+            margin: 0;
+            padding: 0;
+            height: 8%;
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+
+        ul {
+            float: left;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 30%;
+            background-color: #f1f1f1;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #555;
+        }
+
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        form {
+            height: 10%;
+            width: 70%;
+            float: left;
+            text-align: center;
+            background-color: darkblue;
+        }
+
+        label {
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: red;
+        }
+
+        input {
+            margin-left: 80%;
+            margin-botton:10%;
+            margin-top:10%;
+            text-align: center;
+        }
+
+        button {
+            margin-left: 40px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header></header>
+
+    <ul>
+        <li><a href="/">Calcular Horas</a></li>
+        <!--
+        <li><a href="news.asp">News</a></li>*/
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+        -->
+    </ul>
+
+    <div class="container">
+        <form class="px-1 py-5" id="form">
+                <label for="exampleDropdownFormEmail1">Horas Scania</label>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <input type="time" class="form-control" id="hrin" placeholder="Entrada" onKeyDown="if(event.keyCode==13) somaHora();">
+                    <input type="text" class="form-control" id="result" placeholder="Horário de saída" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary" style="margin-left: 70px;" onClick="somaHora();">Calcular</button><br><br>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <label for="exampleDropdownFormEmail1" style="margin-left: 140px; margin-right: 50px;">Banco de Horas</label>
+                        <button type="button" class="btn btn-primary" style="margin-left: 90px;" onClick="somaMeia();">+30</button>
+                        <button type="button" class="btn btn-primary" onClick="somaUma();">+1h</button>
+                        <button type="button" class="btn btn-primary" onClick="somaUmaMeia();">+1:30</button>
+                        <button type="button" class="btn btn-primary" onClick="somaDuas();">+2h</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <footer>
+        Scania
+    </footer>
+</body>
+</html>
